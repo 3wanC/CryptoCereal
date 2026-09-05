@@ -1,4 +1,4 @@
-# CryptoCeral
+# CryptoCereal
 This is a private encryption software.
 It uses a brutalist approach by using a serial key the same length of the encrypted information.
 This means the encryption is indestructible, but can be described as a "glass cannon" as it is extremely fragile if the key is not kept safe.
