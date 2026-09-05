@@ -5,6 +5,7 @@ This means the encryption is indestructible, but can be described as a "glass ca
 
 ## Development Stage
 Very much in early development. Do not expect any functionality as off now.
+Current Decryption and Encryption files are incompatible.
 
 ## Todo List
 * Create simple set up allowing editing of information on pyhton console
