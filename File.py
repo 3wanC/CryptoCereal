@@ -26,16 +26,35 @@
 # File Class #
 class file:
 
-    # Constructor #
+    # ---------------------------------------------- #
+    # Name       : __init__                          #
+    # Parameters : name, data                        #
+    #              STRING, STRING                    #
+    # Returns    : none                              #
+    # ---------------------------------------------- #
+    # This is the constructor for the File class     #
+    # ---------------------------------------------- #
     def __init__(self, name, data):
         self.name = name
         self.data = str(data)
 
-    # Display data to console #
+    # ---------------------------------------------- #
+    # Name       : read                              #
+    # Parameters : none                              #
+    # Returns    : none                              #
+    # ---------------------------------------------- #
+    # Prints the contents of data to the console     #
+    # ---------------------------------------------- #
     def read(self):
         print(self.data)
 
-    # Allows for the manipulation of file data #
+    # ---------------------------------------------- #
+    # Name       : edit                              #
+    # Parameters : none                              # 
+    # Returns    : none                              #
+    # ---------------------------------------------- #
+    # Allows for the manipulation of data            #
+    # ---------------------------------------------- #
     def edit(self):
         print(self.data)
         newData = input(" -> Start with char 'a' to append, or 'w' to overwrite\n -> Enter new data below:\n")
@@ -44,7 +63,14 @@ class file:
         elif newData[0] == "w":
             self.data = newData[1:]
 
-    # Contains while loop to allow command s to be run with the file open #
+    # ---------------------------------------------- #
+    # Name       : open                              #
+    # Parameters : none                              #
+    # Returns    : none                              #
+    # ---------------------------------------------- #
+    # Allows commands to by run on the opne file and #
+    # procides the close functionallity              #
+    # ---------------------------------------------- #
     def open(self):
         _open = True
         while _open:
@@ -58,7 +84,15 @@ class file:
             else:
                 print(" - Command not recognised -")
 
-    # Used to construct the structure save line #                
+    # ---------------------------------------------- #
+    # Name       : createCloseString                 #
+    # Parameters : none                              #
+    # Returns    : formatedString                    #
+    #              STRING                            #
+    # ---------------------------------------------- #
+    # This allows the explorer to create the file    #
+    # structure string so that data can be saved     #
+    # ---------------------------------------------- #                
     def createCloseString(self):
         return f"f{self.name}<{self.data}>"
 
