@@ -20,7 +20,7 @@
 #############
 #  Imports  #
 #############
-import random
+import secrets
 
 #############
 #  Globals  #
@@ -47,6 +47,9 @@ def encrypt(rawString):
     keyString = ""
     encryptedString = ""
 
+    # Create list with values for Secrets to choose from #
+    values = range(100,500)
+
     for x in range(len(rawString)):
 
         # Get assci value of current character #
@@ -56,7 +59,7 @@ def encrypt(rawString):
         switch = ""
 
         # Create a random key #
-        key = random.randint(100,500)
+        key = secrets.choice(values)
         hidden = toChange + key
     
         switch = str(key)
