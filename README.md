@@ -1,3 +1,5 @@
+# Note - This README is out of Date
+
 # CryptoCereal
 This is a private encryption software.
 It uses a brutalist approach by using a serial key the same length of the encrypted information.
