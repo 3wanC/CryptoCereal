@@ -112,7 +112,7 @@ def getInfo():
         os.system("cls")
 
         # We have both inputs verified, check they are correct #
-        confirm = input(f"Please ensure the info below is correct before proceeding\n -> File Path  : {tmpFile}\n -> Key Files  : {numFiles}\n -> Enter (y/n): ")
+        confirm = input(f"Please ensure the info below is correct before proceeding\n -> File Path  : {tmpFile}\n -> Key Files  : {numFiles}\n -> Ensure you have space, You will need 146KB per 1000 files\n -> Enter (y/n): ")
 
         # If they are find, save the file path and return the number of files. Esle return to nesting while loop #
         if confirm == "y":
@@ -163,9 +163,29 @@ def doGenerate():
     # If info is provided, begin generation #
     if not numberOfFiles == None:
 
+        # Calculations for progress bar #
+        bar = ["[--------------------]",
+               "[#-------------------]","[##------------------]","[###-----------------]","[####----------------]","[#####---------------]",
+               "[######--------------]","[#######-------------]","[########------------]","[#########-----------]","[##########----------]",
+               "[###########---------]","[############--------]","[#############-------]","[##############------]","[###############-----]",
+               "[################----]","[#################---]","[##################--]","[###################-]","[####################]"]
+
+        increment = (numberOfFiles * 1.0) / 20.0
+        count = 0
+        incrementCount = 0
+
         # Create the required files #
         for x in range(numberOfFiles):
             x += 1
+
+            if x > (incrementCount + increment):
+                count += 1
+                incrementCount += increment
+
+            os.system("cls")
+            print(f"Please wait.\n -> Generating File : {x}")
+            print(bar[count])
+            
             createFile(x)
 
         # Return True as this was successful #
@@ -174,4 +194,4 @@ def doGenerate():
     # If we get here, generation did not take place so return false #
     return False
 
-# DEBUG ONLY # result = doGenerate()
+result = doGenerate()
