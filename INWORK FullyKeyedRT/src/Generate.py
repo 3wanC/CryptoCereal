@@ -79,6 +79,7 @@ def getInfo():
                 
             except FileNotFoundError, PermissionError:
                 os.system("cls")
+                print(" Hint - Type 'Exit' to quit")
                 print(f"Invalid FilePath : {tmpFile}")
 
         # Now have the path, so clear and move on #
@@ -193,5 +194,3 @@ def doGenerate():
 
     # If we get here, generation did not take place so return false #
     return False
-
-result = doGenerate()
